@@ -17,4 +17,28 @@ const menu= [
       Precio:"25000",
       categoria: "Hamburguesas" 
     },
+    {        
+      id:"00B30",
+      nombre:"Perro Clasico",
+      Precio:"19000",
+      categoria: "Perros" 
+    },
+    {        
+      id:"00B31",
+      nombre:"Perro Doble Queso",
+      Precio:"20000",
+      categoria: "Perros" 
+    },
+    {        
+      id:"00B32",
+      nombre:"Perro crispy",
+      Precio:"22000",
+      categoria: "Perros" 
+    },
 ]; // Aquí guardaremos los productos
+let Idproducto = 1; // Para dar un ID único a cada producto
+function agregarproductos(nombre,Precio){
+const Product = { id: Idproducto, nombre, Precio };
+products.push(product);
+console.log(`Producto agregado: #${product.id} - ${product.name} ($${product.price}`);
+}
