@@ -1,15 +1,17 @@
-let productos = [
-  { id: "1", nombre: "Camisa", precio: 50000, stock: 10 },
-  { id: "2", nombre: "Pantalón", precio: 80000, stock: 5 },
-  { id: "3", nombre: "Zapatos", precio: 120000, stock: 3 }
-];
+const ESTADOS = ["pendiente", "preparando", "entregado"];
 
-//FUNCION PARA AGREGAR UN PRODUCTO
-function agregarProducto(id, nombre, precio, stock) {
-return {id: id, nombre: nombre, precio: precio, stock: stock};
+let estado = ESTADOS[0]; // "pendiente"
+
+// cambiar estado
+estado = ESTADOS[1]; // "preparando"
+
+//FUNCION PARA PEDIDO
+function Pedido(idPedido, nombreCliente, items, total, estado) {
+return {idPedido: idPedido, nombreCliente: nombreCliente, precio: items[menu], precio: total[menu.Precio], estado};
 };
 
-productos.push(agregarProducto("4","Computador",1000000,6));
-productos.push(agregarProducto("5","Celular",500000,2));
-//const resultado = console.log(agregarProducto("1","Tumami",50000,5)) | PRUEBA
-//hello?
+let pedidos = [
+  { idPedido: "1", nombreCliente: "Novelia", precio: 50000, stock: 10 },
+  { idPedido: "2", nombreCliente: "Kyu", precio: 80000, stock: 5 },
+  { idPedido: "3", nombreCliente: "Rubén", precio: items[id["00A30"]], stock: 3 }
+];
