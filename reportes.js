@@ -1,31 +1,25 @@
-// Menú por consola para conectar las funciones.
-// Mostrar cuántos pedidos hay por estado.​
-// Calcular el total de ventas (sumando los pedidos entregados).
+// REPORTES
 
-/*Requerimientos​
+const pedidosPorEstado = (listaPedidos) => {
+    const pedidosPendientes = listaPedidos.filter(elemento => elemento.estado == "pendiente")
+    console.log("Pedidos Pendientes: ")
+    pedidosPendientes.forEach(elemento => {console.log(elemento)
+    });
 
-1. Menú de productos​
+    const pedidosPreparando = listaPedidos.filter(elemento => elemento.estado == "preparando")
+    console.log("Pedidos en Proceso: ")
+    pedidosPreparando.forEach(elemento => {console.log(elemento)
+    });
 
- Agregar un producto con: idProducto, nombre, precio, categoria (por ejemplo: “hamburguesa”, “bebida”, “postre”).​
+    const pedidosEntregados = listaPedidos.filter(elemento => elemento.estado == "entregados")
+    console.log("Pedidos Entregados: ")
+    pedidosEntregados.forEach(elemento => {console.log(elemento)
+    });
+}
 
- Listar todos los productos.​
-
- Buscar productos por nombre o categoría. (punto extra)​
-
-2. Gestión de pedidos​
-
- Crear un pedido con: idPedido, nombreCliente, items[] (lista de Productos), total, estado (pendiente, preparando, entregado).​
-
- Cambiar el estado de un pedido.​
-
- Filtrar pedidos por estado.​
-
-3. Reportes​
-
- Mostrar cuántos pedidos hay por estado.​
-
- Calcular el total de ventas (sumando los pedidos entregados).*/
-
+const totalVentas = (listaPedidos) => {
+    console.log(`El total de ventas ha sido: ${listaPedidos.lenght}`)
+}
 
 // MENU DE FUNCIONES
 
@@ -72,9 +66,9 @@ if (menu == 1) {
     2. Calcular el total de ventas`)
 
     if (menu3 == 1){
-        pedidosPorEstado()
+        pedidosPorEstado(listaPedidos)
     }  else if (menu2 == 2){
-        totalVentas()
+        totalVentas(listaPedidos)
     } else {
         console.log("Escribiste algo invalido")
     }
@@ -82,4 +76,6 @@ if (menu == 1) {
 } else {
     console.log("Decidiste salir")
 }
+
+
 
