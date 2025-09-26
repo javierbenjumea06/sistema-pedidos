@@ -1,17 +1,33 @@
+// Estados permitidos
 const ESTADOS = ["pendiente", "preparando", "entregado"];
 
-let estado = ESTADOS[0]; // "pendiente"
+// Menú (ya lo tienes definido arriba)
 
-// cambiar estado
-estado = ESTADOS[1]; // "preparando"
+// ---------------------------
+// Función para crear pedido
+// ---------------------------
+function crearPedido(idPedido, nombreCliente, idsProductos) {
+  // buscar los productos seleccionados en el menú
+  let items = menu.filter(p => idsProductos.includes(p.id));
 
-//FUNCION PARA PEDIDO
-function Pedido(idPedido, nombreCliente, items, total, estado) {
-return {idPedido: idPedido, nombreCliente: nombreCliente, precio: items[menu], precio: total[menu.Precio], estado};
+  // calcular total
+  let total = items.reduce((sum, item) => sum + item.precio, 0);
+
+  // devolver objeto pedido
+  return {
+    idPedido,
+    nombreCliente,
+    items,
+    total,
+    estado: ESTADOS[0] // empieza en "pendiente"
+  };
+}
+
+// ---------------------------
+// Ejemplo de uso
+// ---------------------------
+let pedidos = {
+    idPedido: "1", nombreCliente: "Novelia", items: ["Hamburguesa Clasica", "Perro Clasico"],
+    idPedido: "2", nombreCliente: "Kyu", items: ["Perro Doble Queso", "Perro crispy"],
+    idPedido: "3", nombreCliente: "Rubén", items: ["Perro Doble Queso", "Perro Clasico"],
 };
-
-let pedidos = [
-  { idPedido: "1", nombreCliente: "Novelia", precio: 50000, stock: 10 },
-  { idPedido: "2", nombreCliente: "Kyu", precio: 80000, stock: 5 },
-  { idPedido: "3", nombreCliente: "Rubén", precio: items[id["00A30"]], stock: 3 }
-];
