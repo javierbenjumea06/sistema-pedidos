@@ -1,31 +1,42 @@
+function agregarproductos(menu) {
+const product = { 
+  id: "00A78",
+  nombre: "Perro Peperoni", 
+  Precio: "25000",
+  categoria: "Perros" };
 
-let Idproducto = 1; 
-function agregarproductos(nombre,precio){
-const Product = { id: Idproducto, nombre, precio };
-products.push(product);
-console.log(`Producto agregado: #${product.id} - ${product.name} ($${product.price}`);
+menu.push(product);
+console.log(`Producto agregado: ${product.id} - ${product.nombre} - ${product.Precio} - ${product.categoria}`);
 }
 
-function listaproductos() {
-  if (products.length === 0) {
-    console.log("No hay productos en el menú.");
-    return;
-  }
-  console.log(" Menú de productos");
-  products.forEach(p => {
-    console.log(`${p.id} - ${p.name} - ${p.price}`)
+agregarproductos(menu)
+
+function listaproductos(menu) {
+  console.log("Menú de productos");
+  menu.forEach(p => {
+    console.log(`${p.id} - ${p.nombre} - ${p.Precio} - ${p.categoria}`)
   });
 }
-function buscarproducto(Hamburguesas) {
-  const results = products.filter(p => p.nombre.includes(`Hamburguesas`));
+
+listaproductos(menu)
+
+const productoBuscado1 = "Hamburguesa"
+const productoBuscado2 = "Pizza"
+
+function buscarproducto(productoBuscado) {
+  const resultados = products.filter(p => p.nombre.includes(productoBuscado));
   if (results.length === 0) {
-    console.log(`No se encontraron productos con: "${Hamburguesas}"`)
+    console.log(`No se encontraron productos con: "${productoBuscado}"`)
   } else {
-    console.log(`Resultados de búsqueda para "${Hamburguesas}"`)
-    results.forEach(p => {
-      console.log(`#${p.id} - ${p.name} - $${p.price}`)
+    console.log(`Resultados de búsqueda para "${productoBuscado}"`)
+    resultados.forEach(p => {
+      console.log(`${p.id} - ${p.nombre} - ${p.Precio} - ${p.categoria}`)
     });
   }
-
 }
+
+buscarproducto(productoBuscado1)
+buscarproducto(productoBuscado2)
+
+
 
