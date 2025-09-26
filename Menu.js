@@ -16,15 +16,16 @@ function listaproductos() {
     console.log(`${p.id} - ${p.name} - ${p.price}`)
   });
 }
-function buscarproduc(query) {
-  const results = products.filter(p => p.name.toLowerCase().includes(query.toLowerCase()));
+function buscarproducto(Hamburguesas) {
+  const results = products.filter(p => p.nombre.includes(`Hamburguesas`));
   if (results.length === 0) {
-    console.log(`No se encontraron productos con: "${query}"`)
+    console.log(`No se encontraron productos con: "${Hamburguesas}"`)
   } else {
-    console.log(`Resultados de búsqueda para "${query}"`)
+    console.log(`Resultados de búsqueda para "${Hamburguesas}"`)
     results.forEach(p => {
       console.log(`#${p.id} - ${p.name} - $${p.price}`)
     });
   }
+
 }
 
