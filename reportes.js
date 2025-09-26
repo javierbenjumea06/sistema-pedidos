@@ -23,20 +23,20 @@ const totalVentas = (listaPedidos) => {
 
 // MENU DE FUNCIONES
 
-const menu = console.log(`ACCEDE A UNO DE LOS MENUS: 
+const menu = prompt(`ACCEDE A UNO DE LOS MENUS: 
         1. Menú de Productos. 
         2. Gestión de Pedidos. 
         3. Reportes.
         4. Salir.`)
 
 if (menu == 1) {
-    const menu1 = console.log(`ELIGE UNA DE LAS FUNCIONES: 
+    const menu1 = prompt(`ELIGE UNA DE LAS FUNCIONES: 
     1. Agregar un producto.
     2. Listar los productos.
     3. Buscar productos por nombre o categoria.`)
 
     if (menu1 == 1){
-        agregarproductos(nombre, precio)
+        agregarproductos(menu)
     }  else if (menu1 == 2){
         listaproductos(menu)
     } else if (menu1 == 3){
@@ -44,8 +44,9 @@ if (menu == 1) {
     } else {
         console.log("Escribiste algo invalido")
     }
+
 } else if (menu == 2) {
-    const menu2 = console.log(`ELIGE UNA DE LAS FUNCIONES: 
+    const menu2 = prompt(`ELIGE UNA DE LAS FUNCIONES: 
     1. Crear un pedido.
     2. Cambiar el estado de un pedido.
     3. Filtrar pedidos por estado.`)
@@ -61,7 +62,7 @@ if (menu == 1) {
     }
 
 } else if (menu == 3) {
-    const menu3 = console.log(`ELIGE UNA DE LAS FUNCIONES: 
+    const menu3 = prompt(`ELIGE UNA DE LAS FUNCIONES: 
     1. Mostrar cuantos pedidos hay por estado.
     2. Calcular el total de ventas`)
 
